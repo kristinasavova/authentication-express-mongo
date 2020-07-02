@@ -18,7 +18,11 @@ app.use((req, res, next) => {
 });
 
 // Mongodb connection
-mongoose.connect("mongodb://localhost:27017/bookworm");
+mongoose.connect("mongodb://localhost:27017/bookworm",
+  { useNewUrlParser: true,
+    useUnifiedTopology: true
+  });
+  
 const db = mongoose.connection;
 
 // Mongo error
